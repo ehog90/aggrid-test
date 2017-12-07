@@ -1,0 +1,12 @@
+@import 'styles';
+
+.ag-header-container {
+  background-color: $orange;
+  color: $solid-gray;
+  & > .ag-header-row {
+    & > .ag-header-cell {
+      padding: 3px;
+      font-weight: bold;
+    }
+  }
+}

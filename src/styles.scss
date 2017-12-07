@@ -1,0 +1,38 @@
+$solid-gray: #333333;
+$orange: #FF9900;
+
+
+body {
+  padding-top: 50px;
+}
+.flag-sc {
+  width: 20px;
+  height: 20px;
+}
+
+.badge.with-flag {
+  margin: 2px;
+  background-color: $solid-gray;
+  color: $orange;
+}
+.badgeb.with-flag > span {
+  font-weight: bold;
+  font-size: 14px;
+}
+
+.row.tenmin {
+  border-bottom: 1px solid $solid-gray;
+  margin-bottom: 2px;
+}
+
+.dropdown-menu > li > a {
+  font-size: 14px;
+  font-weight: bold;
+}
+.navbar-nav {
+  font-size: 16px;
+  font-weight: bold;
+}
+.navbar-brand {
+  padding: 5px;
+}

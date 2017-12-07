@@ -9,7 +9,8 @@
       "outDir": "dist",
       "assets": [
         "assets",
-        "favicon.ico"
+        "favicon",
+        "fonts"
       ],
       "index": "index.html",
       "main": "main.ts",
@@ -19,9 +20,22 @@
       "testTsconfig": "tsconfig.spec.json",
       "prefix": "app",
       "styles": [
-        "styles.css"
+        "fonts/stylesheet.css",
+        "../node_modules/tether/dist/css/tether.css",
+        "../node_modules/bootstrap/dist/css/bootstrap.css",
+        "../node_modules/ag-grid/dist/styles/ag-grid.css",
+        "../node_modules/ag-grid/dist/styles/theme-blue.css",
+        "bootstrap-theme.css",
+        "styles.scss",
+        "ag-grid.scss"
       ],
-      "scripts": [],
+      "scripts": [
+        "../node_modules/tether/dist/js/tether.min.js",
+        "../node_modules/jquery/dist/jquery.min.js",
+        "../node_modules/bootstrap/dist/js/bootstrap.js",
+        "../node_modules/ag-grid/dist/ag-grid.js",
+        "assets/js/nav-fix.js"
+      ],
       "environmentSource": "environments/environment.ts",
       "environments": {
         "dev": "environments/environment.ts",
@@ -51,7 +65,8 @@
     }
   },
   "defaults": {
-    "styleExt": "css",
-    "component": {}
+    "styleExt": "scss",
+    "component": {
+    }
   }
 }
