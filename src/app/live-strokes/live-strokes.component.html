@@ -1,0 +1,23 @@
+<div *ngIf="location.length > 0" style="margin-bottom: 1rem; padding: 0.5rem">
+  <app-current-location [location]="currentLocationDetails"></app-current-location>
+</div>
+<table class="table table-condensed table-striped" style="font-size: 13px">
+    <tr>
+      <th>O.</th>
+      <th>Település</th>
+      <th>Alrégió</th>
+      <th>Régió</th>
+      <th>Idő</th>
+      <th>Távolság</th>
+    </tr>
+  <tr *ngFor="let entry of data; let i = index">
+    <td>
+      <img [alt]="entry.countryCode" [title]="entry.countryName" src="assets/flags/{{entry.countryCode}}-01.png" class="flag-sc" />
+    </td>
+    <td><b>{{entry.settlement || 'Nincs település'}}</b></td>
+    <td>{{entry.subRegion || 'Nincs alrégió'}}</td>
+    <td>{{entry.region || 'Nincs régió'}}</td>
+    <td>{{entry.time | date:'HH:mm:ss'}}</td>
+    <td>{{entry.dd[0] | number:'1.1-1'}} km ({{entry.dd[2]}})</td>
+  </tr>
+</table>

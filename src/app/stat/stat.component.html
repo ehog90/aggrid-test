@@ -1,0 +1,34 @@
+<div [ngSwitch]="type">
+  <h2 *ngSwitchCase="'hour'">Villámok az elmúlt órában</h2>
+  <h2 *ngSwitchCase="'day'">Villámok az elmúlt 24 órában</h2>
+  <h2 *ngSwitchCase="'thisyr'">Villámok idén (UTC)</h2>
+  <h2 *ngSwitchCase="'all'">Összes eddig érzékelt villám</h2>
+</div>
+
+<div class="row" style="border-bottom: 1px solid black; font-weight: bold" *ngIf="allCount > 0">
+  <div class="col-sm-4">
+    Összesen
+  </div>
+  <div class="col-sm-3">
+    {{allCount |  number:'.0'}}
+  </div>
+  <div class="col-sm-3">
+  </div>
+  <div class="col-sm-2">
+  </div>
+</div>
+
+<div class="row" *ngFor="let entry of data; let i = index" style="border-bottom: 1px solid black" [ngClass]="{highlight: getDifferenceInSecs(entry.lastStroke) <= 300 }">
+  <div class="col-sm-4">
+    <img [alt]="entry.countryCode" [title]="entry.countryName" src="assets/flags/{{entry.countryCode}}-01.png" class="flag-sc" />
+    {{i+1}}. {{entry.countryName}}
+  </div>
+  <div class="col-sm-3">
+    {{entry.count |  number:'.0'}} ({{entry.percent | number:'1.4-4'}} %)
+  </div>
+  <div class="col-sm-3">
+    {{entry.lastStroke | date:'yyyy-MM-dd HH:mm:ss'}}
+  </div>
+  <div class="col-sm-2">
+  </div>
+</div>

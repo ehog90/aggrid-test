@@ -1,0 +1,14 @@
+<h2>Tíz percenkénti statisztika az elmúlt 24 órában</h2>
+<div class="tenmin">
+  <div class="row tenmin" *ngFor="let entry of data">
+    <div class="col-sm-1">
+      {{entry.timeStart | date:'HH:mm'}} <span class="badge">{{entry.all}}</span>
+    </div>
+    <div class="col-sm-11">
+    <span class="badge badge-default with-flag" *ngFor="let details of entry.entries">
+      <img [alt]="details.countryCode" [title]="details.countryName" src="assets/flags/{{details.countryCode}}-01.png" class="flag-sc" />
+      <span>{{details.count}}</span>
+    </span>
+    </div>
+  </div>
+</div>

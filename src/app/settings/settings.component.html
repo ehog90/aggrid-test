@@ -1,0 +1,22 @@
+<h2>Beállítások</h2>
+<div class="row">
+  <div class="col-12">
+    <label class="custom-control custom-checkbox">
+      <input type="checkbox" class="custom-control-input" [(ngModel)]="settingsService.continuousGeoLocation">
+      <span class="custom-control-indicator"></span>
+      <span class="custom-control-description">Folyamatos helymeghatározás használata</span>
+    </label>
+  </div>
+  <div class="col-12">
+    <div class="form-group">
+      <input type="text" class="form-control" id="placename" placeholder="Keress egy helyet a manuális beállításhoz, pl. Gödöllő." [(ngModel)]="searchString">
+      <div style="margin-top: 0.5rem">
+        <button id="search" class="btn btn-primary btn-sm" href="#" (click)="searchPlace()">Keres</button>
+        <button id="geolocate" class="btn btn-primary btn-sm" href="#" (click)="getCurrentPlace()">Egyszeri helymeghatározás</button>
+      </div>
+      <div style="margin-top: 0.5rem" *ngIf="settingsService.staticPlace">
+        <b>Statikus helyként elmentve</b>: <app-current-location [location]="settingsService.staticPlace"></app-current-location>
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,19 @@
+<span *ngIf="location" style="margin-bottom: 5px; margin-top: 5px; font-size: 15px;">
+  <img [alt]="location.countryCode" src="assets/flags/{{location.countryCode}}-01.png" class="flag-sc" />
+  <span *ngIf="location.address && location.region">
+    <b>{{location.address}}</b>, {{location.region}}
+  </span>
+  <span *ngIf="!location.address && !location.region">
+      Ismeretlen
+  </span>
+  <span *ngIf="location.address && !location.region">
+    <b>{{location.address}}</b>
+  </span>
+  <span *ngIf="location.region && !location.address">
+      {{location.region}}
+  </span>
+  <span style="font-size: 13px">[{{location.location[1] | number : '1.4-4'}}, {{location.location[0] | number : '1.4-4'}}]</span>
+</span>
+<span *ngIf="!location">
+  Helyzet nem elérhető
+</span>
